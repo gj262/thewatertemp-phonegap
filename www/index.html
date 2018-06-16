@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+<head>
+    <title>The Water Temperature</title>
+    <script type="text/javascript" src="models.js"></script>
+    <script type="text/javascript" src="views.js"></script>
+    <script type="text/javascript" src="control.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=URL,String.prototype.padStart,Array.prototype.find"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="center">
+            <img src="menu.svg" id="menu-toggle" class="menu-toggle" />
+            <ul id="menu" class="menu hidden">
+                <li>
+                    <span class="choose-unit" id="choose-unit">
+                        <a href="#">&#8457;</a> or
+                        <a href="#">&#8451;</a>
+                    </span>
+                </li>
+                <li>
+                    <a href="https://github.com/gj262/thewatertemp/blob/master/README.md#about" target="_blank">About</a>
+                </li>
+            </ul>
+            <h1>The Water Temperature</h1>
+
+            <div>
+                <div class="station-input-wrap">
+                    <input type="text" id="choose-station" name="station" placeholder="Select a station or type ..." title="Click to select a station or type something to find a match."
+                        class="choose-station"></input>
+                    <img src="search.svg" class="input-search" />
+                </div>
+                <div class="station-menu-wrap">
+                    <ul id="station-menu" class="menu station-menu hidden">
+                    </ul>
+                </div>
+                <a id="station-home-link" class="station-home-link" href="#" title="Go to this stations home page" target="_blank"></a>
+            </div>
+
+            <h2>Latest reading:</h2>
+            <div class="latest-temp">
+                <div id="latest-temp"></div>
+                <div id="station-error" class="station-error no-error"></div>
+            </div>
+
+            <h2>Over the last 24 hours:</h2>
+            <div id="24-hours"></div>
+
+            <select id="choose-comparison" name="comparison"></select>
+            <div id="comparison"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+</body>
+
+</html>
